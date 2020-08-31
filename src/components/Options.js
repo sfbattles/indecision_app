@@ -2,11 +2,12 @@ import React from 'react';
 import Option from './Option';
 
 const Options = (props) => {
+  console.table(props.options)
   return (
     <div>
       <button onClick={props.handleDeleteOptions}>Remove All</button>
-      <p>Option Component </p>
-      {props.choices.map((option) => (
+      {props.options.length === 0 && <p>Please add an option to get started!</p>}
+      {props.options.map((option) => (
         <Option 
           key={option} 
           optionText={option} 
